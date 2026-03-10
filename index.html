@@ -5,248 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yingjie Huang</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --muted: #666;
-      --light: #f5f5f5;
-      --border: #e0e0e0;
-      --accent: #4a90d9;
-      --accent-dark: #2c6fad;
-      --nav-bg: #f8f8f8;
+      --bg: #fafaf8;
+      --text: #1c1c1a;
+      --muted: #6b6b62;
+      --light: #f2f2ee;
+      --border: #e3e3db;
+      --accent: #2d6a4f;
+      --accent-light: #52b788;
+      --accent-bg: rgba(45,106,79,0.07);
+      --warm: #b5835a;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 400;
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.7;
-    }
-
-    /* NAV */
-    nav {
-      background: var(--nav-bg);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .nav-inner {
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 2rem;
-      height: 56px;
-    }
-    .nav-brand {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-      text-decoration: none;
-    }
+    body { font-family: 'DM Sans', sans-serif; font-weight: 400; color: var(--text); background: var(--bg); line-height: 1.7; }
+    nav { background: var(--bg); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-inner { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 54px; }
+    .nav-brand { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--text); text-decoration: none; }
     .nav-links { display: flex; gap: 0; list-style: none; }
-    .nav-links a {
-      display: block;
-      padding: 0 1.1rem;
-      line-height: 56px;
-      font-size: 0.88rem;
-      color: var(--muted);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.15s;
-    }
-    .nav-links a:hover { color: var(--accent-dark); }
-
-    /* LAYOUT */
-    .page {
-      max-width: 960px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 3.5rem;
-      align-items: start;
-    }
-
-    /* SIDEBAR */
-    .sidebar { text-align: center; }
-    .avatar-wrap {
-      width: 210px;
-      height: 210px;
-      border-radius: 50%;
-      overflow: hidden;
-      margin: 0 auto 1.25rem;
-      border: 3px solid var(--border);
-      background: var(--light);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .avatar-placeholder { font-size: 4rem; color: #ccc; user-select: none; }
-    .sidebar-name { font-size: 1.15rem; font-weight: 600; line-height: 1.3; margin-bottom: 0.3rem; }
-    .sidebar-title { font-size: 0.82rem; color: var(--muted); line-height: 1.5; margin-bottom: 1.25rem; }
-    .sidebar-links { display: flex; flex-direction: column; gap: 0.5rem; align-items: center; }
-    .sidebar-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.83rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
-    .sidebar-link:hover { color: var(--accent-dark); }
-
-    /* MAIN */
-    .main h1 {
-      font-family: 'Source Serif 4', serif;
-      font-size: 2.1rem;
-      font-weight: 300;
-      margin-bottom: 1.25rem;
-    }
-    .main p { font-size: 0.95rem; color: #333; margin-bottom: 1rem; line-height: 1.8; }
-    .main p a { color: var(--accent-dark); text-decoration: none; }
-    .main p a:hover { text-decoration: underline; }
-
-    .section-header {
-      font-size: 1.35rem;
-      font-family: 'Source Serif 4', serif;
-      font-weight: 400;
-      margin: 2.5rem 0 1rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* NEWS */
-    .news-table { width: 100%; border-collapse: collapse; font-size: 0.875rem; }
-    .news-table td { padding: 0.55rem 0.5rem; vertical-align: top; border-bottom: 1px solid #f0f0f0; }
-    .news-table td:first-child { white-space: nowrap; color: var(--muted); font-size: 0.82rem; width: 110px; padding-right: 1rem; }
+    .nav-links a { display: block; padding: 0 0.85rem; line-height: 54px; font-size: 0.78rem; color: var(--muted); text-decoration: none; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--accent); }
+    .page { max-width: 1000px; margin: 3.5rem auto; padding: 0 2rem; display: grid; grid-template-columns: 195px 1fr; gap: 4rem; align-items: start; }
+    .sidebar { position: sticky; top: 70px; }
+    .avatar-wrap { width: 155px; height: 155px; border-radius: 4px; overflow: hidden; margin: 0 0 1.25rem; border: 1px solid var(--border); background: var(--light); }
+    .avatar-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .sidebar-name { font-family: 'DM Serif Display', serif; font-size: 1.05rem; line-height: 1.3; margin-bottom: 0.25rem; }
+    .sidebar-title { font-size: 0.77rem; color: var(--muted); line-height: 1.6; margin-bottom: 1.25rem; }
+    .sidebar-links { display: flex; flex-direction: column; gap: 0.55rem; }
+    .sidebar-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.79rem; color: var(--muted); text-decoration: none; transition: color 0.15s; }
+    .sidebar-link:hover { color: var(--accent); }
+    .main h1 { font-family: 'DM Serif Display', serif; font-size: 2.35rem; font-weight: 400; line-height: 1.15; margin-bottom: 1.35rem; letter-spacing: -0.01em; }
+    .main p { font-size: 0.91rem; color: #3a3a35; margin-bottom: 0.9rem; line-height: 1.85; }
+    .main p a { color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(45,106,79,0.3); transition: border-color 0.15s; }
+    .main p a:hover { border-color: var(--accent); }
+    .section-header { font-family: 'DM Serif Display', serif; font-size: 1.4rem; font-weight: 400; margin: 2.75rem 0 1.1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); letter-spacing: -0.01em; }
+    .news-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+    .news-table td { padding: 0.55rem 0.5rem; vertical-align: top; border-bottom: 1px solid var(--border); }
+    .news-table td:first-child { white-space: nowrap; color: var(--muted); font-size: 0.77rem; width: 115px; padding-right: 1rem; }
     .news-table tr:last-child td { border-bottom: none; }
-
-    /* EXPERIENCE */
-    .exp-list { list-style: none; }
-    .exp-item { display: grid; grid-template-columns: 130px 1fr; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; font-size: 0.875rem; }
-    .exp-item:last-child { border-bottom: none; }
-    .exp-date { color: var(--muted); font-size: 0.82rem; padding-top: 0.1rem; }
-    .exp-role { font-weight: 600; }
-    .exp-org { color: var(--muted); }
-    .exp-desc { color: #444; margin-top: 0.25rem; line-height: 1.65; }
-
-    /* EDUCATION */
+    .tl-list { list-style: none; }
+    .tl-item { display: grid; grid-template-columns: 130px 1fr; gap: 0.75rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
+    .tl-item:last-child { border-bottom: none; }
+    .tl-date { color: var(--muted); font-size: 0.77rem; padding-top: 0.15rem; line-height: 1.5; }
+    .tl-role { font-weight: 500; font-size: 0.89rem; margin-bottom: 0.1rem; }
+    .tl-org { color: var(--muted); font-size: 0.81rem; margin-bottom: 0.3rem; }
+    .tl-desc { color: #444; line-height: 1.72; font-size: 0.84rem; }
     .edu-list { list-style: none; }
-    .edu-item { display: grid; grid-template-columns: 130px 1fr; gap: 0.75rem; padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; font-size: 0.875rem; }
+    .edu-item { display: grid; grid-template-columns: 130px 1fr; gap: 0.75rem; padding: 0.9rem 0; border-bottom: 1px solid var(--border); font-size: 0.875rem; }
     .edu-item:last-child { border-bottom: none; }
-    .edu-date { color: var(--muted); font-size: 0.82rem; padding-top: 0.1rem; }
-    .edu-degree { font-weight: 600; }
-    .edu-school { color: var(--muted); }
-    .edu-gpa { font-size: 0.82rem; color: var(--accent-dark); margin-top: 0.1rem; }
-
-    /* PROJECTS */
-    .proj-list { display: flex; flex-direction: column; gap: 1.25rem; }
-    .proj-item { padding: 1.25rem; background: var(--light); border-radius: 4px; border-left: 3px solid var(--accent); }
-    .proj-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.35rem; }
-    .proj-desc { font-size: 0.875rem; color: #444; line-height: 1.7; margin-bottom: 0.6rem; }
-    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-    .proj-tag { font-size: 0.72rem; padding: 0.15rem 0.55rem; background: white; border: 1px solid var(--border); border-radius: 20px; color: var(--muted); }
-
-    /* SKILLS */
-    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
-    .skill-group h4 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 0.5rem; }
+    .edu-date { color: var(--muted); font-size: 0.77rem; padding-top: 0.15rem; }
+    .edu-degree { font-weight: 500; font-size: 0.89rem; }
+    .edu-school { color: var(--muted); font-size: 0.81rem; }
+    .edu-gpa { font-size: 0.78rem; color: var(--accent); margin-top: 0.15rem; font-weight: 500; }
+    .edu-honors { font-size: 0.77rem; color: var(--warm); margin-top: 0.05rem; font-style: italic; }
+    .proj-list { display: flex; flex-direction: column; gap: 1rem; }
+    .proj-item { padding: 1.2rem 1.35rem; background: white; border-radius: 3px; border: 1px solid var(--border); border-left: 3px solid var(--accent); transition: box-shadow 0.15s; }
+    .proj-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .proj-title { font-weight: 500; font-size: 0.91rem; margin-bottom: 0.4rem; }
+    .proj-desc { font-size: 0.83rem; color: #444; line-height: 1.75; margin-bottom: 0.65rem; }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+    .proj-tag { font-size: 0.69rem; padding: 0.15rem 0.55rem; background: var(--accent-bg); border: 1px solid rgba(45,106,79,0.2); border-radius: 20px; color: var(--accent); font-weight: 500; }
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+    .skill-group h4 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 0.55rem; font-weight: 500; }
     .skill-pills { display: flex; flex-wrap: wrap; gap: 0.3rem; }
-    .skill-pill { font-size: 0.78rem; padding: 0.2rem 0.6rem; background: var(--light); border: 1px solid var(--border); border-radius: 20px; color: #444; }
-
-    /* FOOTER */
-    footer { margin-top: 4rem; padding: 1.5rem 2rem; text-align: center; font-size: 0.78rem; color: var(--muted); border-top: 1px solid var(--border); }
+    .skill-pill { font-size: 0.77rem; padding: 0.2rem 0.65rem; background: var(--light); border: 1px solid var(--border); border-radius: 20px; color: #3a3a35; }
+    footer { margin-top: 4rem; padding: 1.5rem 2rem; text-align: center; font-size: 0.75rem; color: var(--muted); border-top: 1px solid var(--border); }
     footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--accent-dark); }
-
-    /* CV SECTION */
-    .cv-section { margin-top: 2.5rem; }
-    .cv-block { margin-bottom: 2rem; }
-    .cv-block-title {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent-dark);
-      font-weight: 600;
-      margin-bottom: 0.75rem;
-      padding-bottom: 0.35rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .cv-row {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 0.5rem 0.75rem;
-      padding: 0.55rem 0;
-      border-bottom: 1px solid #f5f5f5;
-      font-size: 0.875rem;
-    }
-    .cv-row:last-child { border-bottom: none; }
-    .cv-date { color: var(--muted); font-size: 0.8rem; padding-top: 0.1rem; }
-    .cv-title { font-weight: 600; line-height: 1.4; }
-    .cv-sub { color: var(--muted); font-size: 0.84rem; }
-    .cv-detail { color: #444; font-size: 0.84rem; margin-top: 0.2rem; line-height: 1.6; }
-    .cv-badge {
-      display: inline-block;
-      font-size: 0.7rem;
-      padding: 0.1rem 0.5rem;
-      border-radius: 20px;
-      border: 1px solid var(--accent);
-      color: var(--accent-dark);
-      background: rgba(74,144,217,0.06);
-      margin-left: 0.4rem;
-      vertical-align: middle;
-      font-weight: 500;
-    }
-    .cv-skills-row { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0.4rem 0; }
-    .cv-pill {
-      font-size: 0.78rem;
-      padding: 0.2rem 0.65rem;
-      background: var(--light);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      color: #444;
-    }
-    .cv-print-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-size: 0.82rem;
-      font-family: 'Raleway', sans-serif;
-      font-weight: 500;
-      padding: 0.5rem 1.1rem;
-      border: 1px solid var(--accent);
-      border-radius: 4px;
-      color: var(--accent-dark);
-      background: rgba(74,144,217,0.05);
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 0.15s;
-      margin-bottom: 1.5rem;
-    }
-    .cv-print-btn:hover { background: rgba(74,144,217,0.12); }
-    @media print {
-      nav, .sidebar, .cv-print-btn { display: none !important; }
-      .page { grid-template-columns: 1fr !important; }
-      body { font-size: 11pt; }
-    }
-
-    @media (max-width: 700px) {
+    footer a:hover { color: var(--accent); }
+    .cv-btn { display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.79rem; font-family: 'DM Sans', sans-serif; font-weight: 500; padding: 0.5rem 1.1rem; border: 1px solid var(--accent); border-radius: 3px; color: var(--accent); background: var(--accent-bg); cursor: pointer; text-decoration: none; transition: all 0.15s; margin-bottom: 1.5rem; }
+    .cv-btn:hover { background: rgba(45,106,79,0.13); }
+    @media (max-width: 720px) {
       .page { grid-template-columns: 1fr; gap: 2rem; }
-      .sidebar { text-align: left; display: flex; align-items: center; gap: 1.5rem; }
-      .avatar-wrap { width: 90px; height: 90px; flex-shrink: 0; margin: 0; }
-      .sidebar-links { flex-direction: row; flex-wrap: wrap; justify-content: flex-start; }
-      .skills-grid { grid-template-columns: 1fr 1fr; }
-      .exp-item, .edu-item, .cv-row { grid-template-columns: 1fr; gap: 0.15rem; }
+      .sidebar { position: static; display: flex; align-items: flex-start; gap: 1.25rem; flex-wrap: wrap; }
+      .avatar-wrap { width: 80px; height: 80px; flex-shrink: 0; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .tl-item, .edu-item { grid-template-columns: 1fr; gap: 0.2rem; }
     }
   </style>
 </head>
@@ -258,69 +93,71 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#news">News</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#research">Research</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#cv">CV</a></li>
     </ul>
   </div>
 </nav>
 
 <div class="page" id="about">
-
-  
   <aside class="sidebar">
     <div class="avatar-wrap">
-      <img src="assets/selfie.jpg" alt="Yingjie Huang" style="width:100%;height:100%;object-fit:cover;object-position:center top;" />
+      <img src="assets/selfie.jpg" alt="Yingjie Huang" />
     </div>
     <div>
       <p class="sidebar-name">Yingjie Huang</p>
       <p class="sidebar-title">M.S. Computer Science<br/>University of California, Los Angeles</p>
       <div class="sidebar-links">
-        <a class="sidebar-link" href="/cdn-cgi/l/email-protection#d7aebeb9b0bdbeb2bfe2e6e597b0f9a2b4bbb6f9b2b3a2">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-          Email
+        <a class="sidebar-link" href="mailto:yingjieh512@g.ucla.edu">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          yingjieh512@g.ucla.edu
         </a>
         <a class="sidebar-link" href="https://github.com/yingjieh512" target="_blank">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
           GitHub
         </a>
         <a class="sidebar-link" href="https://www.linkedin.com/in/yingjie-huang-9270051a5/" target="_blank">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           LinkedIn
         </a>
         <a class="sidebar-link" href="#cv">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
           Curriculum Vitae
         </a>
         <span class="sidebar-link">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
           Los Angeles, CA
         </span>
       </div>
     </div>
   </aside>
 
-  
   <main class="main">
     <h1>Yingjie Huang</h1>
+    <p>
+      I am an M.S. Computer Science student at <a href="https://www.cs.ucla.edu/" target="_blank">UCLA</a>, with broad training spanning computer security, cryptography, machine learning, and mathematical foundations. I am interested in roles at the intersection of AI, security, and rigorous systems design.
+    </p>
+    <p>
+      At UCLA I have taken courses in large-scale machine learning, automated reasoning, reinforcement learning, learning with neural networks, and matrix analysis. I am currently conducting research on neural network interpretability using the Sufficient Input Subsets (SIS) framework, extending it along five directions including probabilistic SIS, hierarchical SIS, and SHAP-guided acceleration.
+    </p>
+    <p>
+      Previously, I completed dual B.A. degrees in Computer Science and Applied Mathematics at <a href="https://eecs.berkeley.edu/" target="_blank">UC Berkeley</a> with <em>Distinction in General Scholarship</em>, where I took advanced coursework in cryptography, computer security, optimization, probability, number theory, and computational complexity. I also served as a Course Reader, CS 61A Academic Intern, and Senior Mentor for CS 61B, and contributed to the <a href="https://github.com/CAHLR/OATutor" target="_blank">OATutor</a> open-source adaptive tutoring platform.
+    </p>
 
-    <p>
-      I am an M.S. Computer Science student at <a href="https://www.cs.ucla.edu/" target="_blank">UCLA</a> with rigorous training in computer security, cryptography, systems, and AI reasoning. I am seeking cybersecurity and compliance-focused roles supporting critical infrastructure.
-    </p>
-    <p>
-      Previously, I completed dual B.A. degrees in Computer Science and Applied Mathematics at <a href="https://eecs.berkeley.edu/" target="_blank">UC Berkeley</a>, where I served as a Course Reader for Numerical Analysis and Complex Analysis, a CS 61A Academic Intern, and Senior Mentor for CS 61B (Data Structures). I also contributed to the <a href="https://github.com/CAHLR/OATutor" target="_blank">OATutor</a> project, building free tutoring resources for high school students preparing for AP exams.
-    </p>
-    <p>
-      My interests lie at the intersection of <strong>cybersecurity</strong>, <strong>cryptography</strong>, and <strong>machine learning</strong>, with a focus on secure system design, threat modeling, and compliance-aware technical analysis.
-    </p>
-
-    
     <h2 class="section-header" id="news">News</h2>
     <table class="news-table">
       <tbody>
         <tr>
+          <td>Winter 2026</td>
+          <td>Continuing M.S. Computer Science at UCLA, with focus on reinforcement learning, neural networks, and matrix analysis.</td>
+        </tr>
+        <tr>
           <td>Sep 2025</td>
-          <td>Started M.S. Computer Science at UCLA (GPA 3.85/4.0).</td>
+          <td>Started M.S. Computer Science at UCLA.</td>
         </tr>
         <tr>
           <td>Sep–Dec 2025</td>
@@ -328,7 +165,7 @@
         </tr>
         <tr>
           <td>Dec 2024</td>
-          <td>Graduated from UC Berkeley with dual B.A. degrees in Computer Science and Applied Mathematics (GPA 3.89/4.0).</td>
+          <td>Graduated from UC Berkeley with dual B.A. degrees in Computer Science and Applied Mathematics, <em>Distinction in General Scholarship</em>.</td>
         </tr>
         <tr>
           <td>Aug 2023</td>
@@ -336,12 +173,11 @@
         </tr>
         <tr>
           <td>Jan 2023</td>
-          <td>Joined the OATutor Project as Undergraduate Researcher, developing AP exam resources for high school students.</td>
+          <td>Joined the OATutor Project as Undergraduate Researcher at UC Berkeley.</td>
         </tr>
       </tbody>
     </table>
 
-    
     <h2 class="section-header" id="education">Education</h2>
     <ul class="edu-list">
       <li class="edu-item">
@@ -358,78 +194,97 @@
           <div class="edu-degree">B.A. Computer Science &amp; B.A. Applied Mathematics</div>
           <div class="edu-school">University of California, Berkeley</div>
           <div class="edu-gpa">GPA: 3.89 / 4.0</div>
+          <div class="edu-honors">Distinction in General Scholarship</div>
         </div>
       </li>
     </ul>
 
-    
+    <h2 class="section-header" id="research">Research Experience</h2>
+    <ul class="tl-list">
+      <li class="tl-item">
+        <div class="tl-date">2025 – Present</div>
+        <div>
+          <div class="tl-role">Graduate Student Researcher — Neural Network Explainability</div>
+          <div class="tl-org">UCLA</div>
+          <div class="tl-desc">Conducting research on neural network interpretability using the Sufficient Input Subsets (SIS) framework (Carter et al., NeurIPS 2021). SIS identifies the minimal subset of input features sufficient for a black-box model to maintain its high-confidence prediction with all other features masked. Extending the framework along five directions: <strong>Probabilistic SIS</strong> (per-feature inclusion frequencies via randomized tie-breaking); <strong>Hierarchical SIS</strong> (multi-scale explanations from pixel to patch to region); <strong>Contrastive SIS</strong> (feature sets supporting the predicted class while suppressing a foil); <strong>SHAP-guided acceleration</strong> (reducing the O(n²) query cost of backward selection); and <strong>SIS stability as a model robustness metric</strong> (Jaccard similarity across perturbed inputs).</div>
+        </div>
+      </li>
+      <li class="tl-item">
+        <div class="tl-date">Sep–Dec 2025</div>
+        <div>
+          <div class="tl-role">Graduate Student Researcher — Large-Scale Machine Learning</div>
+          <div class="tl-org">UCLA</div>
+          <div class="tl-desc">Investigated and compared heuristic strategies for selecting representative subsets of training data at scale. Conducted controlled experiments across multiple selection strategies, demonstrating robustness of training outcomes and informing best practices for efficient dataset curation in large-scale ML pipelines.</div>
+        </div>
+      </li>
+      <li class="tl-item">
+        <div class="tl-date">Jan–Jul 2023</div>
+        <div>
+          <div class="tl-role">Undergraduate Student Researcher — OATutor Project</div>
+          <div class="tl-org">UC Berkeley</div>
+          <div class="tl-desc">Contributed to OATutor, an open-source adaptive tutoring platform for AP exam preparation. Authored step-by-step solutions and layered hint sequences for AP Calculus and Physics problems, and iterated content based on student interaction data and user feedback.</div>
+        </div>
+      </li>
+    </ul>
+
     <h2 class="section-header" id="experience">Experience</h2>
-    <ul class="exp-list">
-      <li class="exp-item">
-        <div class="exp-date">Sep–Dec 2025</div>
+    <ul class="tl-list">
+      <li class="tl-item">
+        <div class="tl-date">Aug 2023 – May 2024</div>
         <div>
-          <div class="exp-role">Graduate Student Researcher</div>
-          <div class="exp-org">Large-Scale Machine Learning · UCLA</div>
-          <div class="exp-desc">Investigated heuristic strategies for selecting representative training data subsets. Conducted controlled experiments demonstrating equivalent model performance across multiple selection strategies.</div>
+          <div class="tl-role">Course Reader — MATH 128A &amp; MATH 185</div>
+          <div class="tl-org">UC Berkeley</div>
+          <div class="tl-desc">Graded assignments for Numerical Analysis (MATH 128A) and Complex Analysis (MATH 185), provided detailed written feedback, and collaborated with GSIs to adjust teaching approaches based on student performance.</div>
         </div>
       </li>
-      <li class="exp-item">
-        <div class="exp-date">Aug 2023 – May 2024</div>
+      <li class="tl-item">
+        <div class="tl-date">Aug 2023 – May 2024</div>
         <div>
-          <div class="exp-role">Course Reader &amp; Senior CS Mentor</div>
-          <div class="exp-org">UC Berkeley · MATH 128A, MATH 185, CS 61B</div>
-          <div class="exp-desc">Designed weekly instructional worksheets for Data Structures (CS 61B), led mentoring sections, and supported students with algorithmic problem-solving and debugging in large-scale Java projects.</div>
+          <div class="tl-role">Senior CS Mentor — CS 61B (Data Structures)</div>
+          <div class="tl-org">UC Berkeley</div>
+          <div class="tl-desc">Designed weekly instructional worksheets aligned with core data structures topics. Led mentoring sections and provided one-on-one tutoring, supporting students with algorithmic concepts, program behavior, and debugging in large-scale Java projects.</div>
         </div>
       </li>
-      <li class="exp-item">
-        <div class="exp-date">Aug–Dec 2023</div>
+      <li class="tl-item">
+        <div class="tl-date">Aug–Dec 2023</div>
         <div>
-          <div class="exp-role">Academic Intern — CS 61A</div>
-          <div class="exp-org">UC Berkeley</div>
-          <div class="exp-desc">Delivered debugging support during lab sections and led mini-lectures on algorithm design and data structures alongside course staff.</div>
+          <div class="tl-role">Academic Intern — CS 61A</div>
+          <div class="tl-org">UC Berkeley</div>
+          <div class="tl-desc">Provided debugging support during lab sections, co-led weekly labs on algorithm design and data structures, and delivered self-prepared mini-lectures on course materials.</div>
         </div>
       </li>
-      <li class="exp-item">
-        <div class="exp-date">Jan–Jul 2023</div>
+      <li class="tl-item">
+        <div class="tl-date">Aug 2022 – Jan 2023</div>
         <div>
-          <div class="exp-role">Undergraduate Student Researcher</div>
-          <div class="exp-org">OATutor Project · UC Berkeley</div>
-          <div class="exp-desc">Developed a free tutoring platform for AP exam preparation, authoring solutions and layered hints for Calculus and Physics problems, iterated based on user feedback.</div>
+          <div class="tl-role">Registered Tutor</div>
+          <div class="tl-org">Diablo Valley College · Pleasant Hill, CA</div>
+          <div class="tl-desc">Tutored students in differential equations, calculus, and linear algebra. Provided homework correction and after-class one-on-one sessions.</div>
         </div>
       </li>
-      <li class="exp-item">
-        <div class="exp-date">Aug 2022 – Jan 2023</div>
+      <li class="tl-item">
+        <div class="tl-date">Jun–Sep 2020</div>
         <div>
-          <div class="exp-role">Registered Math Tutor</div>
-          <div class="exp-org">Diablo Valley College · Pleasant Hill, CA</div>
-          <div class="exp-desc">Tutored students in differential equations, calculus, and linear algebra with one-on-one after-class sessions and homework correction.</div>
-        </div>
-      </li>
-      <li class="exp-item">
-        <div class="exp-date">Jun–Sep 2020</div>
-        <div>
-          <div class="exp-role">Data Intern</div>
-          <div class="exp-org">Data for Good Fund · San Francisco, CA</div>
-          <div class="exp-desc">Maintained nonprofit partner databases, verified data integrity, and collected partner information via surveys and online tracking.</div>
+          <div class="tl-role">Data Management Intern</div>
+          <div class="tl-org">Data for Good Fund · San Francisco, CA</div>
+          <div class="tl-desc">Maintained nonprofit partner databases, verified data integrity, corrected discrepancies, and collected partner information via surveys, online tracking, and subscription data.</div>
         </div>
       </li>
     </ul>
 
-    
     <h2 class="section-header" id="projects">Projects</h2>
     <div class="proj-list">
       <div class="proj-item">
-        <div class="proj-title">🔐 Secure File Sharing System</div>
+        <div class="proj-title">Secure File Sharing System</div>
         <p class="proj-desc">Designed and implemented an end-to-end secure file sharing system with confidentiality, integrity, and access control guarantees — achieving the highest testing score among all submissions. Applied cryptographic primitives for secure key management, encryption, and authorization, with comprehensive threat modeling against key compromise, replay attacks, and unauthorized decryption.</p>
         <div class="proj-tags">
           <span class="proj-tag">Cryptography</span>
           <span class="proj-tag">Threat Modeling</span>
           <span class="proj-tag">Access Control</span>
-          <span class="proj-tag">Security</span>
+          <span class="proj-tag">Secure System Design</span>
         </div>
       </div>
       <div class="proj-item">
-        <div class="proj-title">🌿 Gitlet — Git-Like Version Control System</div>
+        <div class="proj-title">Gitlet — Git-Like Version Control System</div>
         <p class="proj-desc">Built a Git-like version control system from scratch in Java, supporting commit history, branching, merging, and rollback. Implemented file versioning and state transition logic to ensure consistency across repository states, with robust persistence, change tracking, and conflict resolution.</p>
         <div class="proj-tags">
           <span class="proj-tag">Java</span>
@@ -438,15 +293,26 @@
           <span class="proj-tag">Version Control</span>
         </div>
       </div>
+      <div class="proj-item">
+        <div class="proj-title">Triangular Mesh Generator — Computational Geometry</div>
+        <p class="proj-desc">Implemented a 2D unstructured triangular mesh generator in Julia based on the DistMesh algorithm (Persson &amp; Strang, SIAM Review 2004). Used signed distance functions to define arbitrary domain geometries and iterative force-based node relaxation with Delaunay triangulation to produce high-quality meshes over complex domains. Applied adaptive edge-length functions to concentrate nodes near curved boundaries — a core technique in finite element analysis and PDE solvers.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Julia</span>
+          <span class="proj-tag">Computational Geometry</span>
+          <span class="proj-tag">Numerical Analysis</span>
+          <span class="proj-tag">Delaunay Triangulation</span>
+          <span class="proj-tag">FEM</span>
+        </div>
+      </div>
     </div>
 
-    
-    <h2 class="section-header">Skills</h2>
+    <h2 class="section-header" id="skills">Skills</h2>
     <div class="skills-grid">
       <div class="skill-group">
-        <h4>Programming</h4>
+        <h4>Programming Languages</h4>
         <div class="skill-pills">
           <span class="skill-pill">Python</span>
+          <span class="skill-pill">Julia</span>
           <span class="skill-pill">Java</span>
           <span class="skill-pill">C</span>
           <span class="skill-pill">SQL</span>
@@ -454,12 +320,42 @@
         </div>
       </div>
       <div class="skill-group">
-        <h4>Domains</h4>
+        <h4>ML / AI</h4>
         <div class="skill-pills">
-          <span class="skill-pill">Cybersecurity</span>
-          <span class="skill-pill">Cryptography</span>
-          <span class="skill-pill">Machine Learning</span>
+          <span class="skill-pill">PyTorch</span>
+          <span class="skill-pill">NumPy</span>
+          <span class="skill-pill">scikit-learn</span>
+          <span class="skill-pill">Deep Learning</span>
+          <span class="skill-pill">Reinforcement Learning</span>
+          <span class="skill-pill">Neural Networks</span>
+          <span class="skill-pill">Automated Reasoning</span>
+          <span class="skill-pill">Model Interpretability</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Security &amp; Cryptography</h4>
+        <div class="skill-pills">
+          <span class="skill-pill">Cryptographic Protocols</span>
+          <span class="skill-pill">Symmetric &amp; Asymmetric Encryption</span>
+          <span class="skill-pill">Key Management</span>
+          <span class="skill-pill">Access Control</span>
+          <span class="skill-pill">Threat Modeling</span>
+          <span class="skill-pill">Secure System Design</span>
+          <span class="skill-pill">Computer Security</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Mathematics</h4>
+        <div class="skill-pills">
+          <span class="skill-pill">Linear Algebra</span>
+          <span class="skill-pill">Matrix Analysis</span>
           <span class="skill-pill">Numerical Analysis</span>
+          <span class="skill-pill">Optimization</span>
+          <span class="skill-pill">Probability &amp; Stochastic Processes</span>
+          <span class="skill-pill">Abstract Algebra</span>
+          <span class="skill-pill">Number Theory</span>
+          <span class="skill-pill">Computational Complexity</span>
+          <span class="skill-pill">Computational Geometry</span>
         </div>
       </div>
       <div class="skill-group">
@@ -475,37 +371,30 @@
   </main>
 </div>
 
-<div style="max-width:960px;margin:0 auto;padding:0 2rem 4rem;" id="cv">
+<div style="max-width:1000px;margin:0 auto;padding:0 2rem 4rem;" id="cv">
   <h2 class="section-header" style="margin-top:0;">Curriculum Vitae</h2>
-
-  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap;">
-    <a class="cv-print-btn" href="assets/cv.pdf" download="Yingjie_Huang_CV.pdf">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-      Download CV (PDF)
-    </a>
-
-  </div>
-
-  
-  <div style="border:1px solid var(--border);border-radius:4px;overflow:hidden;background:var(--light);">
-    <object
-      data="assets/cv.pdf"
-      type="application/pdf"
-      width="100%"
-      style="display:block;height:90vh;min-height:700px;"
-    >
+  <a class="cv-btn" href="assets/cv.pdf" download="Yingjie_Huang_CV.pdf">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download CV (PDF)
+  </a>
+  <div style="border:1px solid var(--border);border-radius:3px;overflow:hidden;background:var(--light);">
+    <object data="assets/cv.pdf" type="application/pdf" width="100%" style="display:block;height:90vh;min-height:700px;">
       <div style="padding:3rem;text-align:center;">
-        <p style="font-size:0.95rem;color:var(--muted);margin-bottom:1rem;">Your browser cannot display the PDF inline.</p>
-        <a class="cv-print-btn" href="assets/cv.pdf" target="_blank" style="display:inline-flex;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          Open CV in new tab
-        </a>
+        <p style="font-size:0.9rem;color:var(--muted);margin-bottom:1rem;">Your browser cannot display the PDF inline.</p>
+        <a class="cv-btn" href="assets/cv.pdf" target="_blank" style="display:inline-flex;">Open CV in new tab</a>
       </div>
     </object>
   </div>
-  <p style="font-size:0.75rem;color:var(--muted);margin-top:0.75rem;text-align:right;">
-    Last updated: 2025 &nbsp;·&nbsp; <a href="assets/cv.pdf" target="_blank" style="color:var(--muted);">Open in new tab ↗</a>
+  <p style="font-size:0.72rem;color:var(--muted);margin-top:0.6rem;text-align:right;">
+    Last updated: 2026 &nbsp;·&nbsp; <a href="assets/cv.pdf" target="_blank" style="color:var(--muted);">Open in new tab ↗</a>
   </p>
 </div>
+
 <footer>
-  © 2025 Yingjie Huang &nbsp;·&nbsp;
+  © 2026 Yingjie Huang &nbsp;·&nbsp;
+  <a href="https://github.com/yingjieh512" target="_blank">GitHub</a> &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/yingjie-huang-9270051a5/" target="_blank">LinkedIn</a>
+</footer>
+
+</body>
+</html>
